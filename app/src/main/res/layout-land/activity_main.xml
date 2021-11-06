@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/top_view_block"
+        style="@style/landMainBlockStyle"
+
+        android:background="@color/blue"
+        app:layout_constraintDimensionRatio="1.45:1"
+
+        app:layout_constraintBottom_toTopOf="@id/bottom_view_block"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/settings_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sans_normal"
+        android:text="@string/settings"
+        android:textColor="@color/setting_color"
+        android:textSize="24sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_photo_imageview"
+        style="@style/landUserImageViewLocalization"
+        android:layout_width="113dp"
+        android:layout_height="113dp"
+
+        android:layout_marginTop="24dp"
+
+        app:cardCornerRadius="55dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/userImageViewLocalization"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+
+            android:src="@mipmap/halloween" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/username_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sans_normal"
+        android:text="@string/user_name"
+        android:textColor="@color/setting_color"
+        android:textSize="18sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_photo_imageview" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/profession_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sans_normal"
+        android:text="@string/profession"
+        android:textColor="@color/grey_text_2"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username_text_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/home_address_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sans_normal"
+        android:text="@string/home_address"
+        android:textColor="@color/grey_text_2"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profession_text_view" />
+
+    <View
+        android:id="@+id/bottom_view_block"
+        style="@style/landMainBlockStyle"
+        app:layout_constraintDimensionRatio="1.75:1"
+        android:background="@color/white"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_view_block"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/view_contacts_button"
+        style="@style/landButtonLocationStyle"
+        android:layout_marginStart="16dp"
+
+        android:background="@drawable/custom_button_view_contacts"
+        android:text="@string/view_my_contacts"
+        android:textColor="@color/white"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/edit_profile_button"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_profile_button"
+        style="@style/landButtonLocationStyle"
+        android:background="@drawable/custom_button_edit_profile"
+        android:text="@string/edit_profile"
+        android:textAllCaps="false"
+        android:textColor="@color/text_grey"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/view_contacts_button" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/go_to_settings_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/go_to_settings_and_fill_out_the_profile"
+        android:textColor="@color/text_blue"
+        android:textSize="14sp"
+
+        app:layout_constraintBottom_toTopOf="@id/edit_profile_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/f_ellipse_view"
+        style="@style/iconEllipseImageViewStyle"
+        android:layout_marginBottom="8dp"
+
+        android:src="@drawable/ic_ellipse_5"
+
+        app:layout_constraintEnd_toStartOf="@id/in_icon_image_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/go_to_settings_text_view"
+        app:layout_constraintTop_toTopOf="@id/bottom_view_block"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/f_icon_image_button"
+        style="@style/iconImageViewStyle"
+
+        android:src="@drawable/ic_facebook"
+
+        app:layout_constraintBottom_toBottomOf="@id/f_ellipse_view"
+        app:layout_constraintEnd_toEndOf="@id/f_ellipse_view"
+        app:layout_constraintStart_toStartOf="@id/f_ellipse_view"
+        app:layout_constraintTop_toTopOf="@+id/f_ellipse_view" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/in_ellipse_view"
+        style="@style/iconEllipseImageViewStyle"
+
+        android:src="@drawable/ic_ellipse_5"
+
+        app:layout_constraintEnd_toStartOf="@id/vk_ellipse_view"
+        app:layout_constraintStart_toEndOf="@id/f_ellipse_view"
+        app:layout_constraintTop_toTopOf="@+id/f_ellipse_view" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/in_icon_image_button"
+        style="@style/iconImageViewStyle"
+
+        android:src="@drawable/ic_in_icon"
+
+        app:layout_constraintBottom_toBottomOf="@id/in_ellipse_view"
+        app:layout_constraintEnd_toEndOf="@id/in_ellipse_view"
+        app:layout_constraintStart_toStartOf="@id/in_ellipse_view"
+        app:layout_constraintTop_toTopOf="@+id/in_ellipse_view" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vk_ellipse_view"
+        style="@style/iconEllipseImageViewStyle"
+
+        android:src="@drawable/ic_ellipse_5"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/in_ellipse_view"
+        app:layout_constraintTop_toTopOf="@+id/in_ellipse_view" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vk_icon_image_button"
+        style="@style/iconImageViewStyle"
+
+        android:src="@drawable/ic_vk_icon"
+
+        app:layout_constraintBottom_toBottomOf="@id/vk_ellipse_view"
+        app:layout_constraintEnd_toEndOf="@id/vk_ellipse_view"
+        app:layout_constraintStart_toStartOf="@id/vk_ellipse_view"
+        app:layout_constraintTop_toTopOf="@+id/vk_ellipse_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
