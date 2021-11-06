@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/background_gradient.xml" value="0.2203125" />
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.25555555555555554" />
         <entry key="app/src/main/res/drawable/custom_button_edit_profile.xml" value="0.25555555555555554" />
         <entry key="app/src/main/res/drawable/custom_button_register.xml" value="0.25555555555555554" />
@@ -10,10 +11,13 @@
         <entry key="app/src/main/res/drawable/ic_facebook.xml" value="0.25555555555555554" />
         <entry key="app/src/main/res/drawable/ic_in_icon.xml" value="0.25555555555555554" />
         <entry key="app/src/main/res/drawable/ic_vk_icon.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/register_button_night.xml" value="0.26510416666666664" />
         <entry key="app/src/main/res/drawable/selector_button.xml" value="0.25555555555555554" />
         <entry key="app/src/main/res/font/app_fonts.xml" value="0.2564814814814815" />
+        <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout-night/activity_auth.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/halloween.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.25555555555555554" />
       </map>

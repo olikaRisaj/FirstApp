@@ -1,25 +1,38 @@
 package com.example.applicationrisaj
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.applicationrisaj.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var editProfileButton: Button
+    private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        editProfileButton = findViewById(R.id.edit_profile_button)
-        editProfileButton.setOnClickListener {
+        binding.editProfileButton.setOnClickListener {
             val intent = Intent(this@MainActivity, AuthActivity::class.java)
+            val userName = getSharedPreferences(Constants.appPreferencesName, MODE_PRIVATE)
+            val userPassword = getSharedPreferences(Constants.appPreferencesPassword, MODE_PRIVATE)
+            userName.edit().remove(Constants.appPreferencesName)
+            userPassword.edit().remove(Constants.appPreferencesPassword)
             startActivity(intent)
         }
+
+        binding.usernameTextView.text =
+            intent.extras!!.getString("name")!!.substringBefore("@").split(".").joinToString(" ") {
+                it.replaceFirstChar { firstChar ->
+                    firstChar.uppercase()
+                }
+            }.trimEnd()
+
     }
 
 }

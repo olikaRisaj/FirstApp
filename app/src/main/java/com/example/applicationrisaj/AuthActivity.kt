@@ -1,62 +1,74 @@
 package com.example.applicationrisaj
 
+import android.content.Context
 import android.content.Intent
-import android.graphics.Color
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.InputDevice
-import android.view.View
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import com.example.applicationrisaj.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
 
-    lateinit var emailTextInput: TextInputEditText
-    lateinit var passwordTextInput: TextInputEditText
-    lateinit var registerButton: Button
+    private lateinit var binding: ActivityAuthBinding
 
+    private lateinit var mySettings: SharedPreferences
+    private lateinit var userNameLogin: String
+    private lateinit var passwordLogin: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        emailTextInput = findViewById(R.id.email_edit_text)
-        passwordTextInput = findViewById(R.id.password_edit_text)
-
-        emailTextInput.addTextChangedListener() {
-            if(validateEmail()) {
-                emailTextInput.setBackgroundColor(Color.CYAN)
-            } else {
-                emailTextInput.setBackgroundColor(Color.RED)
-            }
+        binding.emailEditText.addTextChangedListener {
+            validateEmail()
         }
 
-        passwordTextInput.addTextChangedListener() {
-            if(validatePassword()) {
-                passwordTextInput.setBackgroundColor(Color.CYAN)
-            } else {
-                passwordTextInput.setBackgroundColor(Color.RED)
-            }
+        binding.passwordEditText.addTextChangedListener {
+            validatePassword()
         }
 
-        registerButton = findViewById(R.id.register_button)
-        registerButton.setOnClickListener {
+
+        mySettings = getSharedPreferences(Constants.appPreferences, Context.MODE_PRIVATE)
+
+        binding.registerButton.setOnClickListener {
             val intent = Intent(this@AuthActivity, MainActivity::class.java)
-            startActivity(intent)
+            val extras = Bundle()
+            extras.putString("name", binding.emailEditText.text.toString())
+            extras.putString("password", binding.passwordEditText.text.toString())
+            intent.putExtras(extras)
+//            startActivity(intent)
+            overridePendingTransition(R.anim.diagonal, R.anim.alpha)
+
+            if(binding.rememberMeCheckBox.isChecked) {
+                userNameLogin = binding.emailEditText.text.toString()
+                passwordLogin = binding.passwordEditText.text.toString()
+                val edit: SharedPreferences.Editor = mySettings.edit()
+                edit.putString(Constants.appPreferencesName, userNameLogin)
+                edit.putString(Constants.appPreferencesPassword, passwordLogin)
+                edit.apply()
+            }
+        }
+
+        if(mySettings.getString(Constants.appPreferencesName, "")?.isNotEmpty() == true) {
+            binding.emailEditText.setText(mySettings.getString(Constants.appPreferencesName, ""))
+            binding.passwordEditText.setText(mySettings.getString(Constants.appPreferencesPassword, ""))
+            val intent = Intent(this@AuthActivity, MainActivity::class.java)
+            intent.putExtra("name", binding.emailEditText.text.toString())
+//            startActivity(intent)
         }
     }
 
     private fun validateEmail(): Boolean {
-        return if(emailTextInput.text.toString().trim().isEmpty()) {
-            emailTextInput.error = "Field can\'t be empty"
+        return if (binding.emailEditText.text.toString().trim().isEmpty()) {
+            binding.emailEditText.error = "Field can\'t be empty"
             false
-        } else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(emailTextInput.text.toString().trim()).matches()) {
-            emailTextInput.error = "Email address is not valid"
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(
+                binding.emailEditText.text.toString().trim()
+            ).matches()
+        ) {
+            binding.emailEditText.error = "Email address is not valid"
             false
         } else {
             true
@@ -64,16 +76,31 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun validatePassword(): Boolean {
-        return if(passwordTextInput.text.toString().trim().isEmpty()) {
-            passwordTextInput.error = "Field can\'t be empty"
-            false
-        } else if(passwordTextInput.text.toString().length < 6) {
-            passwordTextInput.error = "Password can't be less than 6 digit"
-            false
-        } else {
-            true
+        return when {
+            binding.passwordEditText.text.toString().trim().isEmpty() -> {
+                binding.passwordEditText.error = "Field can\'t be empty"
+                false
+            }
+            binding.passwordEditText.text.toString().length < 6 -> {
+                binding.passwordEditText.error = "Password can't be less than 6 digit"
+                false
+            }
+            else -> {
+                true
+            }
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("e-mail", binding.emailEditText.text.toString())
+        outState.putString("passw", binding.passwordEditText.text.toString())
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        binding.emailEditText.setText(savedInstanceState.getString("e-mail"))
+        binding.passwordEditText.setText(savedInstanceState.getString("passw"))
+    }
 
 }
