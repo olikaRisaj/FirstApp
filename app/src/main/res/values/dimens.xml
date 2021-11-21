@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_18dp">18dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_62dp">62dp</dimen>
+    <dimen name="margin_191dp">191dp</dimen>
+    <dimen name="user_image_size_113dp">113dp</dimen>
+    <dimen name="user_image_corner_radius_55dp">55dp</dimen>
+    <dimen name="ellipse_size_60dp">60dp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="button_width_328dp">328dp</dimen>
+    <dimen name="view_contacts_button_height_55dp">55dp</dimen>
+    <dimen name="edit_profile_button_height_40dp">40dp</dimen>
+    <dimen name="padding_1dp">1dp</dimen>
+</resources>
