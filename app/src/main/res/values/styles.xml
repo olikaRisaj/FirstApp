@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="customfontstyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/app_fonts</item>
+    </style>
+
     <style name="iconEllipseImageViewStyle">
-        <item name="android:layout_width">60dp</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">@dimen/ellipse_size_60dp</item>
+        <item name="android:layout_height">@dimen/ellipse_size_60dp</item>
         <item name="android:backgroundTint">@android:color/transparent</item>
     </style>
     
@@ -21,9 +26,10 @@
         <item name="layout_constraintEnd_toEndOf">parent</item>
         <item name="layout_constraintStart_toStartOf">parent</item>
         <item name="layout_constraintTop_toBottomOf">@id/settings_text_view</item>
+        <item name="layout_constraintBottom_toTopOf">@id/username_text_view</item>
     </style>
 
-    <style name="textViewAuthActivityStyle">
+    <style name="textViewAuthActivityStyle" parent="customfontstyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/setting_color</item>

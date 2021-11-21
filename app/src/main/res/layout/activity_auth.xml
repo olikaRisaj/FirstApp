@@ -11,34 +11,31 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/lets_text_view"
         style="@style/textViewAuthActivityStyle"
-        android:layout_marginTop="191dp"
+        android:layout_marginTop="@dimen/margin_191dp"
         android:text="@string/let_s_get_acquainted"
-
-        android:textSize="24sp"
-
+        android:textSize="@dimen/text_size_24sp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/fill_out_profile_text_view"
         style="@style/textViewAuthActivityStyle"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_8dp"
         android:text="@string/fill_out_the_profile_and"
-
-        android:textSize="12sp"
-
+        android:textSize="@dimen/text_size_12sp"
         app:layout_constraintTop_toBottomOf="@id/lets_text_view"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/email_text_view"
+        style="@style/customfontstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
         android:text="@string/e_mail"
         android:textColor="@color/grey_4"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fill_out_profile_text_view" />
 
@@ -46,16 +43,17 @@
         android:id="@+id/email_text_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
         android:background="@color/grey_4"
-        android:paddingBottom="1dp"
+        android:paddingBottom="@dimen/padding_1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_text_view">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_edit_text"
+            style="@style/customfontstyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/blue"
@@ -68,11 +66,11 @@
         android:id="@+id/password_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
         android:text="@string/password"
         android:textColor="@color/grey_4"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_text_input_layout" />
 
@@ -80,16 +78,17 @@
         android:id="@+id/password_text_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
         android:background="@color/grey_4"
-        android:paddingBottom="1dp"
+        android:paddingBottom="@dimen/padding_1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_text_view">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_edit_text"
+            style="@style/customfontstyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/blue"
@@ -100,9 +99,10 @@
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/remember_me_check_box"
+        style="@style/customfontstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="@dimen/margin_18dp"
         android:checked="true"
         android:text="@string/remember_me"
         android:textColor="@android:color/white"
@@ -111,12 +111,13 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/or_text_view"
+        style="@style/customfontstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
         android:text="@string/or"
         android:textColor="@color/setting_color"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         app:layout_constraintBottom_toTopOf="@id/register_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -125,11 +126,12 @@
         android:id="@+id/register_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
         android:background="@drawable/custom_button_register"
         android:text="@string/register"
         android:textColor="@color/setting_color"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_16sp"
+        style="@style/customfontstyle"
         app:layout_constraintBottom_toTopOf="@id/agree_text_view_1"
         app:layout_constraintEnd_toEndOf="@id/password_text_input_layout"
         app:layout_constraintStart_toStartOf="@id/password_text_input_layout" />
@@ -138,10 +140,11 @@
         android:id="@+id/agree_text_view_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
         android:text="@string/by_clicking_register_you_agree_to_our_terms_and_conditions"
         android:textColor="@color/setting_color"
-        android:textSize="12sp"
+        android:textSize="@dimen/text_size_12sp"
+        style="@style/customfontstyle"
         app:layout_constraintBottom_toTopOf="@id/agree_text_view_2"
         app:layout_constraintEnd_toEndOf="@id/lets_text_view"
         app:layout_constraintStart_toStartOf="@id/lets_text_view" />
@@ -150,10 +153,11 @@
         android:id="@+id/agree_text_view_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
         android:text="@string/terms_and_conditions"
         android:textColor="@color/setting_color"
-        android:textSize="12sp"
+        android:textSize="@dimen/text_size_12sp"
+        style="@style/customfontstyle"
         app:layout_constraintBottom_toTopOf="@id/already_have_acc_text_view"
         app:layout_constraintEnd_toEndOf="@id/lets_text_view"
         app:layout_constraintStart_toStartOf="@id/lets_text_view" />
@@ -162,10 +166,11 @@
         android:id="@+id/already_have_acc_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
         android:text="@string/already_have_an_account"
         android:textColor="@color/grey_text_2"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_14sp"
+        style="@style/customfontstyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/sign_in_text_view"
         app:layout_constraintStart_toStartOf="parent" />
@@ -174,10 +179,11 @@
         android:id="@+id/sign_in_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
         android:text="@string/sign_in"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_14sp"
+        style="@style/customfontstyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/already_have_acc_text_view" />

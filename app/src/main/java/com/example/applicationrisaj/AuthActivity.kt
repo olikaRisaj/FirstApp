@@ -21,24 +21,34 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.emailEditText.addTextChangedListener {
-            validateEmail()
-        }
-
-        binding.passwordEditText.addTextChangedListener {
-            validatePassword()
-        }
-
+        loginValidation()
 
         mySettings = getSharedPreferences(Constants.appPreferences, Context.MODE_PRIVATE)
 
+        setRegisterButtonClickListener()
+
+        autovalidation(mySettings)
+
+    }
+
+    private fun autovalidation(mySettings: SharedPreferences?) {
+        if(mySettings?.getString(Constants.appPreferencesName, "")?.isNotEmpty() == true) {
+            binding.emailEditText.setText(mySettings.getString(Constants.appPreferencesName, ""))
+            binding.passwordEditText.setText(mySettings.getString(Constants.appPreferencesPassword, ""))
+            val intent = Intent(this@AuthActivity, MainActivity::class.java)
+            intent.putExtra("name", binding.emailEditText.text.toString())
+//            startActivity(intent)
+        }
+    }
+
+    private fun setRegisterButtonClickListener() {
         binding.registerButton.setOnClickListener {
             val intent = Intent(this@AuthActivity, MainActivity::class.java)
             val extras = Bundle()
             extras.putString("name", binding.emailEditText.text.toString())
             extras.putString("password", binding.passwordEditText.text.toString())
             intent.putExtras(extras)
-//            startActivity(intent)
+            startActivity(intent)
             overridePendingTransition(R.anim.diagonal, R.anim.alpha)
 
             if(binding.rememberMeCheckBox.isChecked) {
@@ -50,13 +60,15 @@ class AuthActivity : AppCompatActivity() {
                 edit.apply()
             }
         }
+    }
 
-        if(mySettings.getString(Constants.appPreferencesName, "")?.isNotEmpty() == true) {
-            binding.emailEditText.setText(mySettings.getString(Constants.appPreferencesName, ""))
-            binding.passwordEditText.setText(mySettings.getString(Constants.appPreferencesPassword, ""))
-            val intent = Intent(this@AuthActivity, MainActivity::class.java)
-            intent.putExtra("name", binding.emailEditText.text.toString())
-//            startActivity(intent)
+    private fun loginValidation() {
+        binding.emailEditText.addTextChangedListener {
+            validateEmail()
+        }
+
+        binding.passwordEditText.addTextChangedListener {
+            validatePassword()
         }
     }
 
