@@ -10,11 +10,11 @@
     <string name="go_to_settings_and_fill_out_the_profile">Перейти до налаштувань профілю</string>
     <string name="let_s_get_acquainted">Розпочнімо знайомство</string>
     <string name="fill_out_the_profile_and">Заповніть профіль та перейдіть до додатку!</string>
-    <string name="e_mail">E-mail</string>
-    <string name="password">Пароль</string>
-    <string name="remember_me">Запам\'ятати мене</string>
-    <string name="or">або</string>
-    <string name="by_clicking_register_you_agree_to_our_terms_and_conditions">Натискаючи "зареєструватися" Ви погоджуєтесь з нашими</string>
+    <string name="auth_email_input_hint">E-mail</string>
+    <string name="auth_password_input_hint">Пароль</string>
+    <string name="auth_remember_me_checkbox_text">Запам\'ятати мене</string>
+    <string name="auth_alternative_option_text">або</string>
+    <string name="by_clicking_register_you_agree_to_our_terms_and_conditions">Натискаючи "зареєструватися" Ви погоджуєтесь з нашими Правилами та Умовами</string>
     <string name="already_have_an_account">Вже маєте акаунт?</string>
     <string name="register">зареєструватися</string>
     <string name="sign_in">увійти</string>
@@ -22,5 +22,4 @@
     <string name="please_enter_password">Будь ласка, введіть пароль</string>
     <string name="enter_email_address">Введіть email</string>
     <string name="enter_your_password">Введіть Ваш пароль</string>
-    <string name="terms_and_conditions">Правилами та Умовами</string>
 </resources>

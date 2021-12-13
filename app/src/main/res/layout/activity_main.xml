@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <View
         android:id="@+id/top_view_block"
@@ -41,10 +41,6 @@
         app:layout_constraintBottom_toTopOf="@id/username_text_view">
 
         <androidx.appcompat.widget.AppCompatImageView
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/settings_text_view"
-            app:layout_constraintBottom_toTopOf="@id/username_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
@@ -56,7 +52,6 @@
         android:id="@+id/username_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="@dimen/margin_24dp"
         android:fontFamily="@font/sans_normal"
         android:text="@string/user_name"
@@ -70,7 +65,6 @@
         android:id="@+id/profession_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="@dimen/margin_8dp"
         android:fontFamily="@font/sans_normal"
         android:text="@string/profession"
@@ -84,7 +78,6 @@
         android:id="@+id/home_address_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:fontFamily="@font/sans_normal"
         android:text="@string/home_address"
@@ -149,14 +142,16 @@
         style="@style/iconEllipseImageViewStyle"
         android:layout_marginTop="@dimen/margin_62dp"
         android:src="@drawable/ic_ellipse_5"
+        tools:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@id/in_icon_image_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_view_block" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/f_icon_image_button"
-        style="@style/iconImageViewStyle"
-        android:src="@drawable/ic_facebook"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_group_15"
         app:layout_constraintBottom_toBottomOf="@id/f_ellipse_view"
         app:layout_constraintEnd_toEndOf="@id/f_ellipse_view"
         app:layout_constraintStart_toStartOf="@id/f_ellipse_view"

@@ -9,11 +9,11 @@
     <string name="go_to_settings_and_fill_out_the_profile">Go to settings and fill out the profile</string>
     <string name="let_s_get_acquainted">Let\'s get acquainted</string>
     <string name="fill_out_the_profile_and">Fill out the profile and go to the application!</string>
-    <string name="e_mail">E-mail</string>
-    <string name="password">Password</string>
-    <string name="remember_me">Remember me</string>
-    <string name="or">or</string>
-    <string name="by_clicking_register_you_agree_to_our_terms_and_conditions">By clicking Register you agree to our</string>
+    <string name="auth_email_input_hint">E-mail</string>
+    <string name="auth_password_input_hint">Password</string>
+    <string name="auth_remember_me_checkbox_text">Remember me</string>
+    <string name="auth_alternative_option_text">or</string>
+    <string name="by_clicking_register_you_agree_to_our_terms_and_conditions">By clicking Register you agree to our \n Terms and Conditions</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="register">register</string>
     <string name="sign_in">Sign in</string>
@@ -21,5 +21,4 @@
     <string name="please_enter_password">Please, enter password</string>
     <string name="enter_email_address">Enter email address</string>
     <string name="enter_your_password">Enter your password</string>
-    <string name="terms_and_conditions">Terms and Conditions</string>
 </resources>
